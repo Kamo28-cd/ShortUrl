@@ -21,20 +21,23 @@ const PreviousUrls: React.FC<PreviousUrlProps> = ({ previousUrls }) => {
   return (
     <TableContainer>
       <Table sx={{ width: 500, margin: "auto" }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>
-              <Typography variant="h6" fontWeight={600}>
-                Original URLs:
-              </Typography>
-            </TableCell>
-            <TableCell>
-              <Typography variant="h6" fontWeight={600}>
-                Shortened URLs:
-              </Typography>
-            </TableCell>
-          </TableRow>
-        </TableHead>
+        {previousUrls.length > 0 ? (
+          <TableHead>
+            <TableRow>
+              <TableCell>
+                <Typography variant="h6" fontWeight={600}>
+                  Original URLs:
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography variant="h6" fontWeight={600}>
+                  Shortened URLs:
+                </Typography>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+        ) : null}
+
         <TableBody>
           {previousUrls.map((urls, index) => (
             <TableRow key={index}>
