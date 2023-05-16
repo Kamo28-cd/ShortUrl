@@ -17,6 +17,5 @@ export const shortUrlSchema = yup.object().shape({
     .string()
     .required(
       "Error - Empty Input: Please enter the shortened URL to find the original"
-    )
-    .matches(UrlRegExp, "Error - Invalid URL: Please enter a valid URL"),
+    ),
 });
